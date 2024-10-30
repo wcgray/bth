@@ -27,7 +27,7 @@ describe('TransactionItem', () => {
       new Date('2024-01-15')
     );
 
-    const { container } = render(<TransactionItem transaction={pendingTransaction} />);
+    render(<TransactionItem transaction={pendingTransaction} />);
     const statusElement = screen.getByText('Pending');
     
     expect(statusElement).toHaveClass('bg-yellow-100');
@@ -35,7 +35,7 @@ describe('TransactionItem', () => {
   });
 
   it('applies correct styling for COMPLETED status', () => {
-    const { container } = render(<TransactionItem transaction={mockTransaction} />);
+    render(<TransactionItem transaction={mockTransaction} />);
     const statusElement = screen.getByText('Completed');
     
     expect(statusElement).toHaveClass('bg-[#17B67A]/10');
