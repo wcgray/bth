@@ -2,6 +2,9 @@
 
 A responsive React web application that displays a dashboard for users to request cash advances and view recent transactions.
 
+![Screenshot 2024-10-30 at 4 16 30 PM](https://github.com/user-attachments/assets/7e295dcf-a3e6-4026-86a4-f6b048b4911c)
+
+
 ## Key Features
 
 - Real-time balance display with smooth animations
