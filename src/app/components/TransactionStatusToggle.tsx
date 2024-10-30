@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import { TransactionStatus } from "../model/Transaction";
 
 export default function TransactionStatusToggle({ filteredTransactionStatus, setFilteredTransactionStatus }: { filteredTransactionStatus: TransactionStatus | null, setFilteredTransactionStatus: (status: TransactionStatus | null) => void }) {
@@ -9,6 +10,8 @@ export default function TransactionStatusToggle({ filteredTransactionStatus, set
             ? 'bg-blue-600 text-white'
             : 'bg-gray-100 text-gray-800'
             }`}
+          aria-pressed={filteredTransactionStatus === null}
+          role="tab"
         >
           All
         </button>
@@ -18,6 +21,8 @@ export default function TransactionStatusToggle({ filteredTransactionStatus, set
             ? 'bg-yellow-100 text-yellow-800'
             : 'bg-gray-100 text-gray-800'
             }`}
+          aria-pressed={filteredTransactionStatus === 'PENDING'}
+          role="tab"
         >
           Pending
         </button>
@@ -27,6 +32,8 @@ export default function TransactionStatusToggle({ filteredTransactionStatus, set
             ? 'bg-[#17B67A]/10 text-[#17B67A]'
             : 'bg-gray-100 text-gray-800'
             }`}
+          aria-pressed={filteredTransactionStatus === 'COMPLETED'}
+          role="tab"
         >
           Completed
         </button>

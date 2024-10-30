@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Transaction from "../model/Transaction";
 import StyledButton from "./StyledButton";
 
 export default function CurrentBalanceHeader({ transactions, setShowRequestCashAdvance }: { transactions: Transaction[], setShowRequestCashAdvance: (show: boolean) => void }) {
-  const balance = transactions
-    .filter(transaction => transaction.status === "COMPLETED")
-    .reduce((acc, transaction) => {
-      if (transaction.type === 'ADVANCED') {
-        return acc + transaction.amount;
-      } else {
-        return acc - transaction.amount;
-      }
-    }, 0);
+  const balance = useMemo(() => 
+    transactions
+      .filter(transaction => transaction.status === "COMPLETED")
+      .reduce((acc, transaction) => {
+        return acc + (transaction.type === 'ADVANCED' ? transaction.amount : -transaction.amount);
+      }, 0),
+    [transactions]
+  );
 
   return (
     <div className="w-full bg-white rounded-lg shadow-md p-6">
       <div className="flex flex-col gap-4">
         <div>
+          
           <h1 className="text-xl text-gray-600 font-medium">Current Balance</h1>
           <BalanceDisplay balance={balance} />
         </div>
