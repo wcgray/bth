@@ -30,8 +30,8 @@ describe('TransactionItem', () => {
     render(<TransactionItem transaction={pendingTransaction} />);
     const statusElement = screen.getByText('Pending');
     
-    expect(statusElement).toHaveClass('bg-yellow-100');
-    expect(statusElement).toHaveClass('text-yellow-800');
+    expect(statusElement).toHaveClass('bg-[#FCA931]/10');
+    expect(statusElement).toHaveClass('text-[#FCA931]');
   });
 
   it('applies correct styling for COMPLETED status', () => {

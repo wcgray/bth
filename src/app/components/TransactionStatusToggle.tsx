@@ -18,7 +18,7 @@ export default function TransactionStatusToggle({ filteredTransactionStatus, set
         <button
           onClick={() => setFilteredTransactionStatus('PENDING')}
           className={`px-3 py-1 rounded-full text-sm ${filteredTransactionStatus === 'PENDING'
-            ? 'bg-yellow-100 text-yellow-800'
+            ? 'bg-[#FCA931]/10 text-[#FCA931]'
             : 'bg-gray-100 text-gray-800'
             }`}
           aria-pressed={filteredTransactionStatus === 'PENDING'}

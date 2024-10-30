@@ -24,7 +24,7 @@ export default function RequestCashAdvanceForm({ onClose, addTransaction }: { on
           </svg>
         </button>
         <div className="flex flex-col gap-6">
-          <h2 className="text-xl font-semibold">Request Cash Advance</h2>
+          <h2 className="text-xl font-semibold">Request a Cash Advance</h2>
           {message &&
             <div className={`p-4 rounded-md ${message.type === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
               {message.message}

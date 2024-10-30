@@ -19,7 +19,7 @@ export default function TransactionItem({ transaction }: { transaction: Transact
         </div>
         <span
           className={`px-3 py-1 rounded-full text-sm ${transaction.status === 'PENDING'
-            ? 'bg-yellow-100 text-yellow-800'
+            ? 'bg-[#FCA931]/10 text-[#FCA931]'
             : 'bg-[#17B67A]/10 text-[#17B67A]'
             }`}
         >
